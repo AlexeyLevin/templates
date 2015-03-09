@@ -1,0 +1,7 @@
+package li.barlog.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+}
