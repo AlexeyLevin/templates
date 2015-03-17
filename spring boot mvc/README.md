@@ -10,5 +10,5 @@ mvn spring-boot:run
 
 ### Create executable jar with dependencies ###
 ```
-mvn install
+mvn package spring-boot:repackage
 ```
