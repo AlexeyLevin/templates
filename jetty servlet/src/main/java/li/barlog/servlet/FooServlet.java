@@ -24,7 +24,7 @@ public final class FooServlet extends HttpServlet {
 	}
 
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(final HttpServletRequest request, final HttpServletResponse response)
 		throws IOException, ServletException {
 
 		request.setAttribute("number", Math.random());

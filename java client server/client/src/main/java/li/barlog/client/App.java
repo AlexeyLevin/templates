@@ -3,10 +3,12 @@ package li.barlog.client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class App {
+public final class App {
 	private static final Logger log = LoggerFactory.getLogger(App.class);
 
-	public static void main(String... args) {
+	private App() {}
+
+	public static void main(final String... args) {
 		log.debug("Client");
 	}
 }

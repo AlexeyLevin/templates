@@ -13,6 +13,10 @@
 	<artifactId>client</artifactId>
 	<name>client</name>
 
+	<properties>
+		<checkstyle.config>${project.basedir}/../checkstyle.xml</checkstyle.config>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>

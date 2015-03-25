@@ -5,7 +5,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public final class TestController {
 	@RequestMapping("/test")
-	public @ResponseBody String hello() { return "test"; }
+	@ResponseBody
+	public String hello() {
+		return "test";
+	}
 }

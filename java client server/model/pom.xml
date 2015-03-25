@@ -13,6 +13,10 @@
 	<artifactId>model</artifactId>
 	<name>model</name>
 
+	<properties>
+		<checkstyle.config>${project.basedir}/../checkstyle.xml</checkstyle.config>
+	</properties>
+
 	<dependencies>
 	</dependencies>
 

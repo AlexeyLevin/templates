@@ -8,17 +8,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan
-public class App {
+public final class App {
 	private static final Logger log = LoggerFactory.getLogger(App.class);
 
-	public static void main(String... args) {
+	private App() {}
+
+	public static void main(final String... args) {
 		log.debug("App starting");
 
-		ConfigurableApplicationContext context =
+		final ConfigurableApplicationContext context =
 			new AnnotationConfigApplicationContext(App.class);
 		context.registerShutdownHook();
 
-		FooService foo = context.getBean(FooService.class);
+		final FooService foo = context.getBean(FooService.class);
 		foo.foo();
 	}
 }

@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class App extends AbstractHandler {
-	public static void main(String... args) throws Exception {
-		Server server = new Server(8080);
+public final class App extends AbstractHandler {
+	private static final int PORT = 8080;
+
+	public static void main(final String... args) throws Exception {
+		final Server server = new Server(PORT);
 		server.setHandler(new App());
 
 		server.start();
@@ -19,14 +21,14 @@ public class App extends AbstractHandler {
 	}
 
 	@Override
-	public void handle(String target,
-					   Request baseRequest,
-					   HttpServletRequest request,
-					   HttpServletResponse response)
+	public void handle(final String target,
+					   final Request baseRequest,
+					   final HttpServletRequest request,
+					   final HttpServletResponse response)
 			throws IOException, ServletException {
 		response.setContentType("text/html;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_OK);
 		baseRequest.setHandled(true);
-		response.getWriter().println("<h1>Hello World</h1>");
+		response.getWriter().println("<h3>Hello, World!</h3>");
 	}
 }
