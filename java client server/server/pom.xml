@@ -15,6 +15,7 @@
 
 	<properties>
 		<checkstyle.config>${project.basedir}/../checkstyle.xml</checkstyle.config>
+        <checkstyle.excludes>**/generated-sources/**/*</checkstyle.excludes>
 	</properties>
 
 	<dependencies>
