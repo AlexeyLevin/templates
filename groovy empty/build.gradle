@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+group = 'li.barlog.templates'
+version = '0.1-SNAPSHOT'
+
+mainClassName = 'li.barlog.App'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.3'
+}
+
+jar {
+	from {configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }}
+	manifest {
+		attributes 'Main-Class': "${mainClassName}"
+	}
+}
