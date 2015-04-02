@@ -1,11 +1,9 @@
 {
-	"name": "AngularJS-Empty-App",
+	"name": "web-empty",
 	"version": "0.1.0",
 	"dependencies": {
 		"jquery": "latest",
-		"bootstrap": "latest",
-		"angular": "latest",
-		"angular-bootstrap": "latest"
+		"bootstrap": "latest"
 	},
 	"private": true
 }

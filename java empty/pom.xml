@@ -5,8 +5,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>li.barlog.templates</groupId>
-	<artifactId>java</artifactId>
-	<name>java</name>
+	<artifactId>java-empty</artifactId>
+	<name>java empty</name>
 	<version>0.1-SNAPSHOT</version>
 
 	<properties>
@@ -20,12 +20,12 @@
 		<junit.version>4.12</junit.version>
 
 		<!-- Logback -->
-		<slf4j.version>1.7.10</slf4j.version>
+		<slf4j.version>1.7.12</slf4j.version>
 		<logback.version>1.1.3</logback.version>
 		<jansi.version>1.11</jansi.version>
 
 		<!-- Error Prone -->
-		<error_prone_core.version>2.0.1</error_prone_core.version>
+		<error_prone_core.version>2.0.2</error_prone_core.version>
 		<plexus-compiler.version>2.5</plexus-compiler.version>
 	</properties>
 
