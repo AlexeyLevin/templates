@@ -1,0 +1,67 @@
+buildscript {
+	ext {
+		springBootVersion = '1.2.3.RELEASE'
+	}
+	repositories {
+		jcenter()
+		maven { url 'https://repo.spring.io/libs-release' }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'spring-boot'
+
+
+def javaVersion = 1.8
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+group = 'li.barlog.templates'
+version = '0.1-SNAPSHOT'
+
+jar {
+	manifest {
+		attributes(
+			'Main-Class': 'li.barlog.App',
+			'Implementation-Title': rootProject.name,
+			'Implementation-Version': version,
+			'Implementation-Vendor': 'barlog'
+		)
+	}
+}
+
+repositories {
+	jcenter()
+	maven { url 'https://repo.spring.io/libs-release' }
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile 'org.slf4j:slf4j-api:+'
+    compile 'ch.qos.logback:logback-classic:+'
+    compile 'org.fusesource.jansi:jansi:+'
+}
+
+build.dependsOn.remove(check)
+check.dependsOn.remove(test)
+
+tasks.withType(FindBugs) {
+	reports {
+		xml.enabled = false
+		html.enabled = true
+	}
+}
+
+checkstyleMain {
+	classpath += configurations.compile
+}
+checkstyleTest {
+	classpath += configurations.compile
+}

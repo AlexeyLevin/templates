@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'/>
+
+	<link rel="stylesheet"
+		  href="../static/css/main.css" th:href="@{css/main.css}"/>
+
+	<script src="../static/js/main.js" th:src="@{js/main.js}"></script>
+
+	<title>Template Spring MVC Empty Project</title>
+</head>
+<body>
+	<h3>Hello, World!</h3>
+	<p th:text="${date}">Date: </p>
+</body>
+</html>

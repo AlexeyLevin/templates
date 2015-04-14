@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+def javaVersion = 1.8
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+group = 'li.barlog.templates'
+version = '0.1-SNAPSHOT'
+
+war {
+	archiveName = "${rootProject.name}##${version}.war"
+	manifest {
+		attributes(
+			'Implementation-Title': rootProject.name,
+			'Implementation-Version': version,
+			'Implementation-Vendor': 'barlog'
+		)
+	}
+}
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	providedCompile 'javax.servlet:javax.servlet-api:3.+'
+	compile 'org.slf4j:slf4j-api:+'
+}
+
+build.dependsOn.remove(check)
+check.dependsOn.remove(test)
+
+tasks.withType(FindBugs) {
+	reports {
+		xml.enabled = false
+		html.enabled = true
+	}
+}
+
+checkstyleMain {
+	classpath += configurations.compile
+}
+checkstyleTest {
+	classpath += configurations.compile
+}
