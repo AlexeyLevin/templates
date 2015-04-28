@@ -10,15 +10,15 @@ import javafx.stage.Stage
 
 @CompileStatic
 class App extends Application {
-	static def main(String... args) {
+	static void main(String... args) {
 		launch(App.class, args)
 	}
 
 	@Override
 	void start(Stage stage) throws Exception {
-		final URL location = getClass().getResource('/stage/main.fxml')
-		final FXMLLoader fxmlLoader = new FXMLLoader(location)
-		final Pane pane = (Pane) fxmlLoader.load()
+		URL location = getClass().getResource('/stage/main.fxml')
+		FXMLLoader fxmlLoader = new FXMLLoader(location)
+		Pane pane = (Pane) fxmlLoader.load()
 
 		def scene = new Scene(pane);
 		stage.setScene(scene);

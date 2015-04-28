@@ -4,7 +4,7 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 class App {
-	static def main(args) {
+	static void main(args) {
 		println("foo")
 	}
 }

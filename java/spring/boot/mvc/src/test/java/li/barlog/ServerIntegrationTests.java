@@ -18,10 +18,10 @@ import static org.junit.Assert.assertEquals;
 @WebIntegrationTest("server.port:0")
 @DirtiesContext
 public class ServerIntegrationTests {
+	private final TestRestTemplate restTemplate = new TestRestTemplate();
+
 	@Value("${local.server.port}")
 	private int port;
-
-	TestRestTemplate restTemplate = new TestRestTemplate();
 
 	@Test
 	public void test() throws Exception {

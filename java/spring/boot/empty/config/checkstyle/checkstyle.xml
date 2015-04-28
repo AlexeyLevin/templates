@@ -18,7 +18,7 @@
 			<property name="javaStyle" value="true" />
 		</module>
 
-		<module name="FinalParameters" />
+		<!--<module name="FinalParameters" />-->
 		<module name="MultipleVariableDeclarations" />
 		<!--<module name="RequireThis" />-->
 
@@ -28,14 +28,14 @@
 		<module name="DefaultComesLast" />
 
 		<module name="FinalClass" />
-		<module name="HideUtilityClassConstructor" />
+		<!--<module name="HideUtilityClassConstructor" />-->
 		<module name="ModifierOrder" />
 
 		<module name="CovariantEquals" />
 		<module name="EmptyStatement" />
 		<module name="EqualsAvoidNull" />
 
-		<module name="FinalLocalVariable" />
+		<!--<module name="FinalLocalVariable" />-->
 		<!--<module name="HiddenField" />-->
 		<module name="MagicNumber">
 			<property name="ignoreAnnotation" value="true" />

@@ -11,16 +11,14 @@ import org.springframework.context.annotation.ComponentScan;
 public final class App {
 	private static final Logger log = LoggerFactory.getLogger(App.class);
 
-	private App() {}
-
-	public static void main(final String... args) {
+	public static void main(String... args) {
 		log.debug("App starting");
 
-		final ConfigurableApplicationContext context =
+		ConfigurableApplicationContext context =
 			new AnnotationConfigApplicationContext(App.class);
 		context.registerShutdownHook();
 
-		final FooService foo = context.getBean(FooService.class);
+		FooService foo = context.getBean(FooService.class);
 		foo.foo();
 	}
 }

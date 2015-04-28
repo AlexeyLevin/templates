@@ -10,13 +10,13 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class App implements CommandLineRunner {
 	private static final Logger log = LoggerFactory.getLogger(App.class);
 
-	public static void main(final String... args) {
+	public static void main(String... args) {
 		new SpringApplicationBuilder(App.class)
 			.registerShutdownHook(true).run(args);
 	}
 
 	@Override
-	public void run(final String... strings) throws Exception {
+	public void run(String... strings) throws Exception {
 		log.info("App");
 	}
 }
