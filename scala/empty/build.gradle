@@ -1,18 +1,23 @@
-apply plugin: 'groovy'
+apply plugin: 'scala'
 apply plugin: 'application'
+apply plugin: 'idea'
 
 group = 'li.barlog.templates'
 version = '0.1-SNAPSHOT'
 
-mainClassName = 'li.barlog.App'
+mainClassName = 'li.barlog.MainApp'
 
 repositories {
-	jcenter()
+    jcenter()
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.3'
+	compile "org.scala-lang:scala-library:+"
+	compile "org.scala-lang:scala-compiler:+"
 }
+
+build.dependsOn.remove(check)
+check.dependsOn.remove(test)
 
 jar {
 	from {
@@ -29,6 +34,3 @@ jar {
 		)
 	}
 }
-
-build.dependsOn.remove(check)
-check.dependsOn.remove(test)

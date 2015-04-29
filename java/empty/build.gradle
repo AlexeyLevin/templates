@@ -13,7 +13,10 @@ version = '0.1-SNAPSHOT'
 mainClassName = 'li.barlog.App'
 
 jar {
-	from {configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }}
+	from {
+		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+		configurations.runtime.collect {it.isDirectory() ? it : zipTree(it)}
+	}
 
 	manifest {
 		attributes(
