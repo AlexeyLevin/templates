@@ -16,9 +16,6 @@ dependencies {
 	compile "org.scala-lang:scala-compiler:+"
 }
 
-build.dependsOn.remove(check)
-check.dependsOn.remove(test)
-
 jar {
 	from {
 		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}

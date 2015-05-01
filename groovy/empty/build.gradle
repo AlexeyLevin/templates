@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'application'
+apply plugin: 'idea'
 
 group = 'li.barlog.templates'
 version = '0.1-SNAPSHOT'
@@ -29,6 +30,3 @@ jar {
 		)
 	}
 }
-
-build.dependsOn.remove(check)
-check.dependsOn.remove(test)

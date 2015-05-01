@@ -11,11 +11,10 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
 apply plugin: 'spring-boot'
 
+apply plugin: 'java'
+apply plugin: 'idea'
 
 def javaVersion = 1.8
 sourceCompatibility = javaVersion
@@ -23,17 +22,6 @@ targetCompatibility = javaVersion
 
 group = 'li.barlog.templates'
 version = '0.1-SNAPSHOT'
-
-jar {
-	manifest {
-		attributes(
-			'Main-Class': 'li.barlog.App',
-			'Implementation-Title': rootProject.name,
-			'Implementation-Version': version,
-			'Implementation-Vendor': 'barlog'
-		)
-	}
-}
 
 repositories {
 	jcenter()
@@ -49,19 +37,13 @@ dependencies {
     compile 'org.fusesource.jansi:jansi:+'
 }
 
-build.dependsOn.remove(check)
-check.dependsOn.remove(test)
-
-tasks.withType(FindBugs) {
-	reports {
-		xml.enabled = false
-		html.enabled = true
+jar {
+	manifest {
+		attributes(
+			'Main-Class': 'li.barlog.App',
+			'Implementation-Title': rootProject.name,
+			'Implementation-Version': version,
+			'Implementation-Vendor': 'barlog'
+		)
 	}
-}
-
-checkstyleMain {
-	classpath += configurations.compile
-}
-checkstyleTest {
-	classpath += configurations.compile
 }
