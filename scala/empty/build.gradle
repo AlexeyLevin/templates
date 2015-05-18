@@ -16,6 +16,10 @@ dependencies {
 	compile "org.scala-lang:scala-compiler:+"
 }
 
+wrapper {
+	gradleVersion = '2.4'
+}
+
 jar {
 	from {
 		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}

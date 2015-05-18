@@ -15,6 +15,10 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.3'
 }
 
+wrapper {
+	gradleVersion = '2.4'
+}
+
 jar {
 	from {
 		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}

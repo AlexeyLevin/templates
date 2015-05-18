@@ -16,6 +16,10 @@ dependencies {
 	compile files("${System.properties['java.home']}/lib/ext/jfxrt.jar")
 }
 
+wrapper {
+	gradleVersion = '2.4'
+}
+
 jar {
 	from {
 		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}

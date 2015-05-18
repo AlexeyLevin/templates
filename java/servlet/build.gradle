@@ -18,6 +18,10 @@ dependencies {
 	compile 'org.slf4j:slf4j-api:+'
 }
 
+wrapper {
+	gradleVersion = '2.4'
+}
+
 war {
 	archiveName = "${rootProject.name}##${version}.war"
 	manifest {

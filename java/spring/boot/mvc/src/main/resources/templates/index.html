@@ -10,10 +10,10 @@
 
 	<script src="../static/js/main.js" th:src="@{js/main.js}"></script>
 
-	<title>Template Spring MVC Empty Project</title>
+	<title th:text="${name}">$name</title>
 </head>
 <body>
-	<h3>Hello, World!</h3>
-	<p th:text="${date}">Date: </p>
+	<h3 th:text="${name}">$name</h3>
+	<p th:text="${version}">$version</p>
 </body>
 </html>
