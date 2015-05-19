@@ -14,7 +14,6 @@ buildscript {
 apply plugin: 'spring-boot'
 
 apply plugin: 'java'
-apply plugin: 'idea'
 
 def javaVersion = 1.8
 sourceCompatibility = javaVersion
@@ -29,8 +28,8 @@ repositories {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.boot:spring-boot-starter'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
 
     compile 'org.slf4j:slf4j-api:+'
     compile 'ch.qos.logback:logback-classic:+'

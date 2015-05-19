@@ -1,6 +1,5 @@
 apply plugin: 'scala'
 apply plugin: 'application'
-apply plugin: 'idea'
 
 group = 'li.barlog.templates'
 version = '0.1-SNAPSHOT'
@@ -12,8 +11,8 @@ repositories {
 }
 
 dependencies {
-	compile "org.scala-lang:scala-library:+"
-	compile "org.scala-lang:scala-compiler:+"
+	compile 'org.scala-lang:scala-library:+'
+	compile 'org.scala-lang:scala-compiler:+'
 }
 
 wrapper {

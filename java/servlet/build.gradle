@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'idea'
 
 def javaVersion = 1.8
 sourceCompatibility = javaVersion

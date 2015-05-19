@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'idea'
 
 def javaVersion = 1.8
 sourceCompatibility = javaVersion

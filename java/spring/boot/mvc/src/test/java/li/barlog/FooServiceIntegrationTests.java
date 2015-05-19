@@ -56,7 +56,6 @@ public class FooServiceIntegrationTests {
 		JsonNode rootNode = objectMapper.readTree(entity.getBody());
 		JsonNode versionNode = rootNode.path("version");
 
-
 		assertFalse(versionNode.isMissingNode());
 		assertTrue(versionNode.asText().equals(version));
 	}
