@@ -1,0 +1,12 @@
+app:
+    name: Template Spring MVC Empty Project
+    description: ${app.name} is a Spring Boot app
+    version: 0.1-SNAPSHOT
+
+spring.main.show-banner: false
+
+logging:
+    level:
+        org:
+            springframework: WARN
+            springframework.test: WARN
