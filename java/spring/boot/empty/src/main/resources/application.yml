@@ -8,5 +8,5 @@ spring.main.show-banner: false
 logging:
     level:
         org:
-            springframework: WARN
-            springframework.test: WARN
+            springframework: INFO
+            springframework.test: INFO
