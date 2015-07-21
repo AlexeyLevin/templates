@@ -4,49 +4,36 @@ buildscript {
 	}
 	repositories {
 		jcenter()
-		maven { url 'https://repo.spring.io/libs-release' }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
 	}
 }
 
-apply plugin: 'spring-boot'
-
 apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
 
 def javaVersion = 1.8
 sourceCompatibility = javaVersion
 targetCompatibility = javaVersion
 
-group = 'li.barlog.templates'
-version = '0.1-SNAPSHOT'
-
 repositories {
 	jcenter()
-	maven { url 'https://repo.spring.io/libs-release' }
 }
 
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
-
-    compile 'org.slf4j:slf4j-api:+'
-    compile 'ch.qos.logback:logback-classic:+'
-    compile 'org.fusesource.jansi:jansi:+'
-}
-
-wrapper {
-	gradleVersion = '2.4'
 }
 
 jar {
-	manifest {
-		attributes(
-			'Main-Class': 'li.barlog.App',
-			'Implementation-Title': rootProject.name,
-			'Implementation-Version': version,
-			'Implementation-Vendor': 'barlog'
-		)
-	}
+	baseName = 'foo'
+	version = '0.0.1-SNAPSHOT'
+}
+
+wrapper {
+	gradleVersion = '2.5'
 }

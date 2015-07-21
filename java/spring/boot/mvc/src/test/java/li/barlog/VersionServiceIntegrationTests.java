@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 @SpringApplicationConfiguration(classes = App.class)
 @WebIntegrationTest("server.port:0")
 @DirtiesContext
-public class FooServiceIntegrationTests {
+public class VersionServiceIntegrationTests {
 	private final TestRestTemplate restTemplate = new TestRestTemplate();
 	private String URL;
 
@@ -34,15 +34,7 @@ public class FooServiceIntegrationTests {
 
 	@Before
 	public void init() {
-		URL = "http://localhost:" + port + "/foo";
-	}
-
-	@Test
-	public void test() throws Exception {
-		ResponseEntity<String> entity = restTemplate.getForEntity(
-			URL + "/test", String.class);
-		assertEquals(HttpStatus.OK, entity.getStatusCode());
-		assertEquals("test", entity.getBody());
+		URL = "http://localhost:" + port + "/api";
 	}
 
 	@Test

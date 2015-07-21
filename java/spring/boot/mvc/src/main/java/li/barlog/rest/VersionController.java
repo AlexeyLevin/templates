@@ -9,16 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/foo")
-public final class FooController {
+@RequestMapping("/api")
+public final class VersionController {
 	@Value("${app.version}")
 	private String version;
-
-	@RequestMapping("/test")
-	@ResponseBody
-	public String hello() {
-		return "test";
-	}
 
 	@RequestMapping("/version")
 	@ResponseBody
