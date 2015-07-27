@@ -1,25 +1,34 @@
-apply plugin: 'java'
+buildscript {
+	repositories {
+		jcenter()
+		maven {
+			url 'http://clojars.org/repo'
+		}
+	}
+
+	dependencies {
+		classpath 'clojuresque:clojuresque:1.7.0'
+	}
+}
+
+apply plugin: 'clojure'
 apply plugin: 'application'
 
-def javaVersion = 1.8
-sourceCompatibility = javaVersion
-targetCompatibility = javaVersion
+clojure.warnOnReflection = true
+clojure.aotCompile = true
 
-group = 'li.barlog.template.java'
+group 'li.barlog.template.clojure.gradle'
 version = '0.1-SNAPSHOT'
 
-mainClassName = 'li.barlog.App'
+mainClassName = 'li.barlog.app'
 
 repositories {
-    jcenter()
+	jcenter()
+	clojarsRepo()
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:+'
-    compile 'ch.qos.logback:logback-classic:+'
-    compile 'org.fusesource.jansi:jansi:+'
-
-    testCompile 'junit:junit:+'
+	compile 'org.clojure:clojure:1.7.0'
 }
 
 wrapper {

@@ -5,7 +5,7 @@ def javaVersion = 1.8
 sourceCompatibility = javaVersion
 targetCompatibility = javaVersion
 
-group = 'li.barlog.templates'
+group = 'li.barlog.template.java'
 version = '0.1-SNAPSHOT'
 
 repositories {
@@ -18,14 +18,15 @@ dependencies {
 }
 
 wrapper {
-	gradleVersion = '2.4'
+	gradleVersion = '2.5'
 }
 
 war {
 	archiveName = "${rootProject.name}##${version}.war"
+
 	manifest {
 		attributes(
-			'Implementation-Title': rootProject.name,
+			'Implementation-Title': 'app',
 			'Implementation-Version': version,
 			'Implementation-Vendor': 'barlog'
 		)
