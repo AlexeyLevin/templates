@@ -20,7 +20,11 @@ module.exports = {
             { test: /\.html$/, loader: "raw" },
             { test: /\.css$/, loader: "style!css" },
 			{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url?limit=100000' },
-			{ test: /\.jsx?$/, loader: 'jsx' }
+            {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'react-hot!babel?stage=0'
+            }
 		]
     },
     resolveLoader: {
