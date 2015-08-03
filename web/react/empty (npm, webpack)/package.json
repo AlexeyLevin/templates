@@ -1,0 +1,14 @@
+{
+	"private": true,
+	"analyze": true,
+	"name": "hello",
+	"version": "0.0.1",
+	"scripts": {
+		"build": "webpack --progress --colors --bail -p",
+		"build-dev": "webpack --progress --colors --bail --display-error-details",
+		"start": "webpack-dev-server --progress --colors"
+	},
+	"dependencies": {
+		"react": "latest"
+  }
+}
