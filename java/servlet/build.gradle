@@ -22,7 +22,8 @@ wrapper {
 }
 
 war {
-	archiveName = "${rootProject.name}##${version}.war"
+	//tomcat archiveName = "app##${version}.war"
+	archiveName = "app.war"
 
 	manifest {
 		attributes(
