@@ -1,9 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-def javaVersion = 1.8
-sourceCompatibility = javaVersion
-targetCompatibility = javaVersion
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 group = 'li.barlog.template.spring'
 version = '0.1-SNAPSHOT'
@@ -27,7 +26,7 @@ dependencies {
 }
 
 wrapper {
-	gradleVersion = '2.5'
+	gradleVersion = '2.6'
 }
 
 jar {
