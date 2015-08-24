@@ -22,11 +22,19 @@ public final class VersionController {
 
 	@RequestMapping("/version")
 	@ResponseBody
-	public Map<String, Object> version() {
-		Map<String, Object> r = new HashMap<>(1);
-		r.put("version", version);
-		r.put("name", name);
-		r.put("description", description);
-		return r;
+	public Version version() {
+		return new Version(version, name, description);
+	}
+
+	private class Version {
+		public final String version;
+		public final String name;
+		public final String description;
+
+		private Version(String version, String name, String description) {
+			this.version = version;
+			this.name = name;
+			this.description = description;
+		}
 	}
 }
