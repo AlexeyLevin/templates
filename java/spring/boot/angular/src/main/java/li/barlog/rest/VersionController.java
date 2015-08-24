@@ -1,12 +1,11 @@
 package li.barlog.rest;
 
+import li.barlog.domain.Version;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -24,17 +23,5 @@ public final class VersionController {
 	@ResponseBody
 	public Version version() {
 		return new Version(version, name, description);
-	}
-
-	private class Version {
-		public final String version;
-		public final String name;
-		public final String description;
-
-		private Version(String version, String name, String description) {
-			this.version = version;
-			this.name = name;
-			this.description = description;
-		}
 	}
 }
