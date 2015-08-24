@@ -5,7 +5,6 @@ app:
 
 spring:
     main.show-banner: false
-    thymeleaf.cache: false
 
 error.whitelabel.enabled: true
 
@@ -16,4 +15,3 @@ logging:
             springframework.web: INFO
             springframework.test: INFO
             hibernate: INFO
-            thymeleaf: INFO

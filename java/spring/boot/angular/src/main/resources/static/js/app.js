@@ -1,23 +1,25 @@
-var app = angular.module('app', ['app.controller', 'app.service', 'ui.router']);
-angular.module('app.controller', ['ui.bootstrap']);
-angular.module('app.service', ['ngResource']);
+var app = angular.module('app', ['controllers', 'services', 'ui.router']);
+angular.module('controllers', ['ui.bootstrap']);
+angular.module('services', ['ngResource']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(
+	['$stateProvider', '$urlRouterProvider',
+		function($stateProvider, $urlRouterProvider) {
 	'use strict';
 
 	$urlRouterProvider.otherwise("/");
 
 	$stateProvider
-		.state('main', {
+		.state('home', {
 			url: '/',
-			templateUrl: 'view/main.html',
-			controller: 'main'
+			templateUrl: 'view/home.html',
+			controller: 'HomeController'
 		})
 		.state('about', {
 			url: '/about',
 			templateUrl: 'view/about.html',
-			controller: 'about'
+			controller: 'AboutController'
 		});
-}).run(function($state) {
-	$state.go('main');
-});
+}]).run(['$state', function($state) {
+	$state.go('home');
+}]);
