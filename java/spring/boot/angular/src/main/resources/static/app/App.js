@@ -1,25 +1,28 @@
-var app = angular.module('app', ['controllers', 'services', 'ui.router']);
-angular.module('controllers', ['ui.bootstrap']);
-angular.module('services', ['ngResource']);
+(function (angular) {
+	'use strict';
 
-app.config(
-	['$stateProvider', '$urlRouterProvider',
-		function ($stateProvider, $urlRouterProvider) {
-			'use strict';
+	angular.module('app.controllers', ['ui.bootstrap']);
+	angular.module('app.services', ['ngResource']);
 
-			$urlRouterProvider.otherwise("/");
+	var app = angular.module('app', ['app.controllers', 'app.services', 'ui.router']);
 
-			$stateProvider
-				.state('home', {
-					url: '/',
-					templateUrl: 'app/home/_home.html',
-					controller: 'HomeController'
-				})
-				.state('about', {
-					url: '/about',
-					templateUrl: 'app/about/_about.html',
-					controller: 'AboutController'
-				});
-		}]).run(['$state', function ($state) {
-		$state.go('home');
-	}]);
+	app.config(
+		['$stateProvider', '$urlRouterProvider',
+			function ($stateProvider, $urlRouterProvider) {
+				$urlRouterProvider.otherwise("/");
+
+				$stateProvider
+					.state('home', {
+						url: '/',
+						templateUrl: 'app/home/_home.html',
+						controller: 'HomeController'
+					})
+					.state('about', {
+						url: '/about',
+						templateUrl: 'app/about/_about.html',
+						controller: 'AboutController'
+					})
+			}]).run(['$state', function ($state) {
+			$state.go('home');
+		}]);
+})(angular);

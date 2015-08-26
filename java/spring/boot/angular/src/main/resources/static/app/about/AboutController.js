@@ -1,10 +1,13 @@
-angular
-	.module('controllers')
-	.controller('AboutController',
-	['$scope', 'VersionService', function ($scope, versionService) {
-		'use strict';
+(function (angular) {
+	'use strict';
 
+	var AboutController = function ($scope, versionService) {
 		versionService.get(function (data) {
 			$scope.app = data;
 		});
-	}]);
+	};
+
+	AboutController.$inject = ['$scope', 'VersionService'];
+
+	angular.module('app.controllers').controller('AboutController', AboutController);
+})(angular);

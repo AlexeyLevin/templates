@@ -6,13 +6,15 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+		classpath 'io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE'
+		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'provided-base'
 apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management'
 
