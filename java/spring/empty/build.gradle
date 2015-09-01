@@ -19,7 +19,7 @@ version = '0.1-SNAPSHOT'
 
 mainClassName = 'li.barlog.App'
 
-def springVersion = '4.1.7.RELEASE'
+def springVersion = '4.2.1.RELEASE'
 
 repositories {
     jcenter()

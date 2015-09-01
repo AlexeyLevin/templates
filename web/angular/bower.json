@@ -2,8 +2,7 @@
 	"name": "empty",
 	"version": "0.1.0",
 	"dependencies": {
-		"jquery": "latest",
-		"bootstrap": "latest",
+		"bootstrap-css-only": "latest",
 		"angular": "latest",
 		"angular-ui-router": "latest",
 		"angular-resource": "latest",
