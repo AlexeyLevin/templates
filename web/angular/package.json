@@ -1,0 +1,17 @@
+{
+	"scripts": {
+		"build": "gulp",
+		"build-dev": "webpack --progress --colors --bail --display-error-details",
+		"start": "webpack-dev-server --progress --colors"
+	},
+	"devDependencies": {
+		"gulp": "latest",
+		"gulp-concat": "latest",
+		"gulp-usemin": "latest",
+		"gulp-uglify": "latest",
+		"gulp-angular-templatecache": "latest",
+		"gulp-minify-css": "latest",
+		"gulp-rimraf": "latest",
+		"run-sequence": "latest"
+	}
+}

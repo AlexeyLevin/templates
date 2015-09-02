@@ -1,10 +1,11 @@
 (function (angular) {
 	'use strict';
 
+	angular.module('templates', []); // for generated $templateCache
 	angular.module('app.controllers', ['ui.bootstrap']);
 	angular.module('app.services', ['ngResource']);
 
-	var app = angular.module('app', ['app.controllers', 'app.services', 'ui.router']);
+	var app = angular.module('app', ['templates', 'app.controllers', 'app.services', 'ui.router']);
 
 	var Router = function ($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise("/");

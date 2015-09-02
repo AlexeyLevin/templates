@@ -1,3 +1,5 @@
 .idea/
 /*.iml
-/bower_components
+src/bower_components/
+dist/
+node_modules/
