@@ -1,0 +1,6 @@
+{
+	"name": "config",
+	"constants": {
+		"production": true
+	}
+}

@@ -1,17 +1,22 @@
 {
 	"scripts": {
 		"build": "gulp",
-		"build-dev": "webpack --progress --colors --bail --display-error-details",
-		"start": "webpack-dev-server --progress --colors"
+		"start": "http-server dist"
 	},
 	"devDependencies": {
 		"gulp": "latest",
 		"gulp-concat": "latest",
-		"gulp-usemin": "latest",
+		"gulp-add-src": "latest",
+		"gulp-filter": "latest",
+		"gulp-useref": "latest",
 		"gulp-uglify": "latest",
+		"gulp-rev": "latest",
+		"gulp-rev-replace": "latest",
 		"gulp-angular-templatecache": "latest",
+		"gulp-ng-constant": "latest",
 		"gulp-minify-css": "latest",
-		"gulp-rimraf": "latest",
-		"run-sequence": "latest"
+		"gulp-minify-html": "latest",
+		"run-sequence": "latest",
+		"del": "latest"
 	}
 }
