@@ -10,7 +10,7 @@
 		'app.controllers', 'app.services', 'ui.router']);
 
 	var Router = function ($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('home', {
@@ -29,12 +29,12 @@
 	app.config(Router);
 
 	var Initializer = function($state, $injector, $log) {
-		var production
+		var production;
 
 		try {
 			production = $injector.get('production');
 		} catch (e) {
-			$log.log('Constant "production" not defined');
+			$log.log('Constant "production" not defined', e);
 		}
 
 		if (production) {

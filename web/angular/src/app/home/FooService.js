@@ -3,9 +3,9 @@
 
 	var FooService = function () {
 		return function() {
-			return [{message: "Foo"}, {message: "Bar"}, {message: "Buz"}];
-		}
+			return [{message: 'Foo'}, {message: 'Bar'}, {message: 'Buz'}];
+		};
 	};
 
-	angular.module('app.services').factory('FooService', FooService);
+	angular.module('app.services').service('FooService', FooService);
 })(angular);

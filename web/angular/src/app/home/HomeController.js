@@ -5,7 +5,7 @@
 		$scope.foo = fooService();
 	};
 
-	HomeController.$inject = ['$scope', 'FooService']
+	HomeController.$inject = ['$scope', 'FooService'];
 
 	angular.module('app.controllers').controller('HomeController', HomeController);
 })(angular);
