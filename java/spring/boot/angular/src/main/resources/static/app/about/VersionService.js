@@ -1,11 +1,11 @@
 (function (angular) {
 	'use strict';
 
-	var VersionFactory = function($resource) {
-		return $resource('/api/version');
+	var VersionFactory = function($resource, configService) {
+		return $resource(configService.apiUrl + 'version');
 	};
 
-	VersionFactory.$inject = ['$resource'];
+	VersionFactory.$inject = ['$resource', 'ConfigService'];
 
 	angular.module('app.services').factory('VersionService', VersionFactory);
 })(angular);

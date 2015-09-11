@@ -1,28 +1,44 @@
 (function (angular) {
 	'use strict';
 
+	angular.module('config', []);
+	angular.module('templates', []);
 	angular.module('app.controllers', ['ui.bootstrap']);
 	angular.module('app.services', ['ngResource']);
 
-	var app = angular.module('app', ['app.controllers', 'app.services', 'ui.router']);
+	var app = angular.module('app', ['config', 'templates',
+		'app.controllers', 'app.services', 'ui.router']);
 
-	app.config(
-		['$stateProvider', '$urlRouterProvider',
-			function ($stateProvider, $urlRouterProvider) {
-				$urlRouterProvider.otherwise("/");
+	var Router = function ($stateProvider, $urlRouterProvider) {
+		$urlRouterProvider.otherwise('/');
 
-				$stateProvider
-					.state('home', {
-						url: '/',
-						templateUrl: 'app/home/_home.html',
-						controller: 'HomeController'
-					})
-					.state('about', {
-						url: '/about',
-						templateUrl: 'app/about/_about.html',
-						controller: 'AboutController'
-					})
-			}]).run(['$state', function ($state) {
-			$state.go('home');
-		}]);
+		$stateProvider
+			.state('home', {
+				url: '/',
+				templateUrl: 'app/home/_home.html',
+				controller: 'HomeController'
+			})
+			.state('about', {
+				url: '/about',
+				templateUrl: 'app/about/_about.html',
+				controller: 'AboutController'
+			});
+	};
+
+	Router.$inject = ['$stateProvider', '$urlRouterProvider'];
+	app.config(Router);
+
+	var Initializer = function($state, configService) {
+		if (configService.production) {
+			app.config(['$compileProvider', function ($compileProvider) {
+				$compileProvider.debugInfoEnabled(false);
+			}]);
+		}
+
+		angular.element(document).ready(function() {
+			$state.go('home', {});
+		})
+	};
+	Initializer.$inject = ['$state', 'ConfigService'];
+	app.run(Initializer);
 })(angular);

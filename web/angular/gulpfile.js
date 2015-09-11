@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 	del = require('del');
 
 gulp.task('config', function () {
-	gulp.src('src/config.json')
+	return gulp.src('src/config.json')
 		.pipe(ngConstant())
 		.pipe(gulp.dest('tmp'));
 });

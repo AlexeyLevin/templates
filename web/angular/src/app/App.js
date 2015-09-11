@@ -28,16 +28,8 @@
 	Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 	app.config(Router);
 
-	var Initializer = function($state, $injector, $log) {
-		var production;
-
-		try {
-			production = $injector.get('production');
-		} catch (e) {
-			$log.log('Constant "production" not defined', e);
-		}
-
-		if (production) {
+	var Initializer = function($state, configService) {
+		if (configService.production) {
 			$log.log('production: ' + production);
 			app.config(['$compileProvider', function ($compileProvider) {
 				$compileProvider.debugInfoEnabled(false);
