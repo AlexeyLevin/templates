@@ -1,0 +1,22 @@
+{
+	"scripts": {
+		"build": "gulp",
+		"start": "http-server dist"
+	},
+	"devDependencies": {
+		"gulp": "latest",
+		"gulp-concat": "latest",
+		"gulp-add-src": "latest",
+		"gulp-filter": "latest",
+		"gulp-useref": "latest",
+		"gulp-uglify": "latest",
+		"gulp-rev": "latest",
+		"gulp-rev-replace": "latest",
+		"gulp-angular-templatecache": "latest",
+		"gulp-ng-constant": "latest",
+		"gulp-minify-css": "latest",
+		"gulp-minify-html": "latest",
+		"run-sequence": "latest",
+		"del": "latest"
+	}
+}

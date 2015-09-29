@@ -1,4 +1,4 @@
-Template Spring Boot MVC Empty Project
+Template Spring Boot MVC Empty Project with Angular
 =====================
 
 Template for [Spring Boot](http://projects.spring.io/spring-boot/) MVC project with [Gradle](http://gradle.org/).

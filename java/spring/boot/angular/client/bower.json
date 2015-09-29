@@ -1,12 +1,12 @@
 {
-	"private": true,
-	"name": "app",
+	"name": "empty",
 	"version": "0.1.0",
 	"dependencies": {
+		"bootstrap-css-only": "latest",
 		"angular": "latest",
 		"angular-ui-router": "latest",
 		"angular-resource": "latest",
-		"angular-bootstrap": "latest",
-		"bootstrap-css-only": "latest"
-	}
+		"angular-bootstrap": "latest"
+	},
+	"private": true
 }

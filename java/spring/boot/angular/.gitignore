@@ -2,4 +2,8 @@
 .gradle/
 /*.iml
 /build
-/generated
+/server/generated
+/server/generated_tests
+/server/src/main/resources/static
+/client/src/bower_components
+/client/node_modules

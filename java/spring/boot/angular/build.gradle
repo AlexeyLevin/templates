@@ -1,55 +1,14 @@
-buildscript {
-	ext {
-		springBootVersion = '1.2.5.RELEASE'
-	}
-	repositories {
-		jcenter()
-	}
-	dependencies {
-		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-		classpath 'io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE'
-		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
-	}
+allprojects {
+	group 'li.barlog.templates.spring.boot'
+	version '0.1-SNAPSHOT'
 }
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'provided-base'
-apply plugin: 'spring-boot'
-apply plugin: 'io.spring.dependency-management'
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
-repositories {
-	jcenter()
+project (':client') {
 }
 
-configurations {
-	compile.exclude module: "spring-boot-starter-tomcat"
-}
-
-dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-web'
-	compile 'org.springframework.boot:spring-boot-starter-undertow'
-
-	provided 'org.immutables:value:+'
-
-	testCompile 'org.springframework.boot:spring-boot-starter-test'
-	testCompile 'org.skyscreamer:jsonassert:+'
-}
-
-jar {
-	baseName = 'app'
-	version = '0.1-SNAPSHOT'
+project (':server') {
 }
 
 wrapper {
 	gradleVersion = '2.6'
-}
-
-task stage(dependsOn: ['clean', 'bootRepackage'])
-
-bootRepackage {
-	it.mustRunAfter clean
 }
