@@ -1,15 +1,13 @@
-buildscript {
-	repositories {
-		jcenter()
-	}
-	dependencies {
-		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
-	}
+plugins {
+	//id 'nebula.provided-base' version '3.0.3'
+	//id 'nebula.optional-base' version '3.0.3'
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'provided-base'
+apply plugin: 'idea'
+//apply plugin: 'nebula.provided-base'
+//apply plugin: 'nebula.optional-base'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -32,11 +30,11 @@ dependencies {
 }
 
 wrapper {
-	gradleVersion = '2.6'
+	gradleVersion '2.8'
 }
 
 jar {
-	baseName = 'app'
+	baseName 'app'
 
 	from {
 		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
