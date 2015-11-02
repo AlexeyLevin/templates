@@ -1,0 +1,52 @@
+plugins {
+	//id 'nebula.provided-base' version '3.0.3'
+	//id 'nebula.optional-base' version '3.0.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+//apply plugin: 'nebula.provided-base'
+//apply plugin: 'nebula.optional-base'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+group = 'li.barlog.template.java'
+version = '0.1-SNAPSHOT'
+
+mainClassName = 'li.barlog.App'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:+'
+    compile 'ch.qos.logback:logback-classic:+'
+    compile 'org.fusesource.jansi:jansi:+'
+
+    testCompile 'junit:junit:+'
+}
+
+wrapper {
+	gradleVersion '2.8'
+}
+
+jar {
+	baseName 'app'
+
+	from {
+		configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+		configurations.runtime.collect {it.isDirectory() ? it : zipTree(it)}
+	}
+
+	manifest {
+		attributes(
+			'Main-Class': mainClassName,
+			'Implementation-Title': baseName,
+			'Implementation-Version': version,
+			'Implementation-Vendor': 'barlog'
+		)
+	}
+}
