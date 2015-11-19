@@ -3,12 +3,12 @@ allprojects {
 	version '0.1-SNAPSHOT'
 }
 
-project (':client') {
+project ('client') {
 }
 
-project (':server') {
+project ('server') {
 }
 
 wrapper {
-	gradleVersion '2.8'
+	gradleVersion '2.9'
 }
