@@ -1,0 +1,16 @@
+group 'li.barlog.template'
+
+allprojects {
+	apply plugin: 'idea'
+	version '0.1-SNAPSHOT'
+}
+
+subprojects {
+	repositories {
+		jcenter()
+	}
+}
+
+wrapper {
+	gradleVersion '2.11'
+}

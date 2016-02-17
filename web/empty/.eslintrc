@@ -1,0 +1,17 @@
+{
+	"extends": ["eslint:recommended"],
+	"env": {
+		"es6": true,
+		"browser": true,
+		"jquery": true,
+		"amd": true,
+    	"mocha": true
+		},
+	"rules": {
+		"indent": [2, "tab"],
+		"linebreak-style": [2, "unix"],
+		"quotes": [2, "single"],
+		"camelcase": [2, {"properties": "always"}],
+		"no-console": 0
+	}
+}

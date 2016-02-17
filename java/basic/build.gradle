@@ -22,11 +22,15 @@ repositories {
 }
 
 dependencies {
+    compile 'org.slf4j:slf4j-api:+'
+    compile 'ch.qos.logback:logback-classic:+'
+    compile 'org.fusesource.jansi:jansi:+'
+
     testCompile 'junit:junit:+'
 }
 
 wrapper {
-	gradleVersion '2.11'
+	gradleVersion '2.10'
 }
 
 jar {
