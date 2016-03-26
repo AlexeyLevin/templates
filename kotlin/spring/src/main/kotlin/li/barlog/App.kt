@@ -7,14 +7,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder
 
 @SpringBootApplication
 open class App: CommandLineRunner {
-	private val log = LoggerFactory.getLogger(App::class.java)
+	companion object {
+		private val log = LoggerFactory.getLogger(App::class.java)
+	}
 
-	override fun run(vararg args: String?) {
-		log.info("App started")
+	override fun run(vararg args: String) {
 	}
 }
 
-fun main(args: Array<String>) {
+fun main(vararg args: String) {
 	SpringApplicationBuilder(App::class.java)
 		.registerShutdownHook(true).run(*args)
 }
