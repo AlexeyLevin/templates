@@ -1,9 +1,6 @@
 spring:
-  main:
-    banner_mode: off
-  application:
-    name: template-spring-kotlin-app
+  main.banner_mode: off
+  application.name: template-spring-kotlin-app
+  output.ansi.enabled: always
 
-logging:
-  level:
-    root: INFO
+logging.level.root: INFO
