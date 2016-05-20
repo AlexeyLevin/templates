@@ -3,13 +3,12 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
+		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.+'
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'provided-base'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -19,7 +18,7 @@ version = '0.1-SNAPSHOT'
 
 mainClassName = 'li.barlog.App'
 
-def springVersion = '4.2.1.RELEASE'
+def springVersion = '4.2.5.RELEASE'
 
 repositories {
     jcenter()
@@ -36,7 +35,7 @@ dependencies {
 }
 
 wrapper {
-	gradleVersion = '2.6'
+	gradleVersion = '2.11'
 }
 
 jar {

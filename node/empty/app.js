@@ -7,11 +7,11 @@ if (require.main === module) {
 }
 
 function registerHooks() {
-	process.on('unhandledRejection', function(reason, obj){
+	process.on('unhandledRejection', (reason, obj) => {
 		console.error('Unhandled Rejection at: [%s] reason: %s', obj, reason);
 	});
 
-	process.on('uncaughtException', function(reason, obj){
+	process.on('uncaughtException', (reason, obj) => {
 		console.error('Unhandled Exception at: [%s] reason: %s', obj, reason);
 	});
 }

@@ -1,22 +1,31 @@
 {
+	"private": true,
 	"scripts": {
-		"build": "gulp",
-		"start": "http-server dist"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node_modules/.bin/webpack-dev-server --content-base src",
+		"build": "NODE_ENV=production node_modules/.bin/webpack",
+		"clean": "rm -r dist",
+		"lint": "node_modules/.bin/eslint src; exit 0"
 	},
 	"devDependencies": {
-		"gulp": "latest",
-		"gulp-concat": "latest",
-		"gulp-add-src": "latest",
-		"gulp-filter": "latest",
-		"gulp-useref": "latest",
-		"gulp-uglify": "latest",
-		"gulp-rev": "latest",
-		"gulp-rev-replace": "latest",
-		"gulp-angular-templatecache": "latest",
-		"gulp-ng-constant": "latest",
-		"gulp-minify-css": "latest",
-		"gulp-minify-html": "latest",
-		"run-sequence": "latest",
-		"del": "latest"
+		"eslint": "latest",
+		"eslint-config-angular": "latest",
+		"eslint-plugin-angular": "latest",
+		"css-loader": "latest",
+		"file-loader": "latest",
+		"html-webpack-plugin": "latest",
+		"raw-loader": "latest",
+		"style-loader": "latest",
+		"resolve-url-loader": "latest",
+		"url-loader": "latest",
+		"imports-loader": "latest",
+		"webpack": "latest",
+		"webpack-dev-server": "latest"
+	},
+	"dependencies": {
+		"angular": "latest",
+		"angular-ui-router": "latest",
+		"angular-resource": "latest",
+		"angular-bootstrap": "latest"
 	}
 }

@@ -1,14 +1,16 @@
 package li.barlog
 
 import org.junit.Test
-import kotlin.test.assertTrue
+import org.junit.Assert.assertTrue
 
 class AppTest {
-	@Test fun testOk() {
+	@Test
+	fun testOk() {
 		assertTrue(true)
 	}
 
-	@Test fun testFail() {
+	@Test
+	fun testFail() {
 		assertTrue(false)
 	}
 }

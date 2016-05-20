@@ -1,45 +1,33 @@
-(function (angular) {
+module.exports = function () {
 	'use strict';
 
-	angular.module('config', []);
-	angular.module('templates', []);
+	var angular = require('angular');
+	require('angular-ui-router');
+	require('angular-bootstrap');
+	require('angular-resource');
+
 	angular.module('app.controllers', ['ui.bootstrap']);
 	angular.module('app.services', ['ngResource']);
 
-	var app = angular.module('app', ['config', 'templates',
-		'app.controllers', 'app.services', 'ui.router']);
+	angular.module('app', ['app.controllers', 'app.services', 'ui.router']);
 
-	var Router = function ($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/');
+	require('./router')(angular);
+	require('./about/about-controller')(angular);
+	require('./home/foo-service')(angular);
+	require('./home/home-controller')(angular);
 
-		$stateProvider
-			.state('home', {
-				url: '/',
-				templateUrl: 'app/home/_home.html',
-				controller: 'HomeController'
-			})
-			.state('about', {
-				url: '/about',
-				templateUrl: 'app/about/_about.html',
-				controller: 'AboutController'
-			});
-	};
-
-	Router.$inject = ['$stateProvider', '$urlRouterProvider'];
-	app.config(Router);
-
-	var Initializer = function($state, configService) {
-		if (configService.production) {
-			$log.log('production: ' + production);
-			app.config(['$compileProvider', function ($compileProvider) {
+	function Initializer($state, $log) {
+		$log.log('debug: ' + DEBUG);
+		if (!DEBUG) {
+			angular.module('app').config(function ($compileProvider) {
 				$compileProvider.debugInfoEnabled(false);
-			}]);
+			});
 		}
 
-		angular.element(document).ready(function() {
+		angular.element(document).ready(function () {
 			$state.go('home', {});
-		})
+		});
 	};
-	Initializer.$inject = ['$state', '$injector', '$log'];
-	app.run(Initializer);
-})(angular);
+	Initializer.$inject = ['$state', '$log'];
+	angular.module('app').run(Initializer);
+};
